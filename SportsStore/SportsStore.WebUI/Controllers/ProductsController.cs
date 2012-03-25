@@ -20,7 +20,8 @@
         /// </summary>
         public ProductsController()
         {
-            this.productsRepository = new FakeProductsRepository();
+            string conString = @"Server=.\SQLEXPRESS;Database=SportsStore;Trusted_Connection=yes;";
+            this.productsRepository = new SqlProductsRepository(conString);
         }
 
         public ViewResult List()
